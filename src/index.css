@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+/* CSS Reset and Modern Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Colors */
+  --orange-light: rgb(255, 145, 71);
+  /* Lightest orange for backgrounds, badges, hover highlights */
+  --orange-soft: rgb(255, 115, 22);
+  /* Soft orange for borders, secondary accents */
+  --orange-medium: rgb(255, 117, 26);
+  /* Brand Primary Orange */
+  --orange-dark: rgb(237, 95, 0);
+  /* Hover/Focus states, dark orange text */
+  --orange-deep: rgb(182, 73, 0);
+  /* High contrast text, dark deep orange shadow */
+
+  --text-main: hsl(220, 15%, 20%);
+  --text-muted: hsl(220, 10%, 45%);
+  --bg-primary: hsl(0, 0%, 100%);
+  /* Main page background */
+  --bg-secondary: hsl(24, 30%, 98%);
+  /* Cards, Header, Sections */
+  --bg-tertiary: hsl(24, 100%, 96%);
+  /* Subtle containers, highlights, tag backgrounds */
+  --border-color: hsl(220, 13%, 91%);
+
+  /* Gradients (Orange-based) */
+  --gradient-primary: linear-gradient(135deg, var(--orange-soft) 0%, var(--orange-medium) 100%);
+  --gradient-vibrant: linear-gradient(135deg, var(--orange-medium) 0%, var(--orange-dark) 100%);
+  --gradient-subtle: linear-gradient(135deg, var(--orange-light) 0%, var(--orange-soft) 100%);
+
+  /* Typography Scale */
+  --font-h1: clamp(2.25rem, 5vw, 3rem);
+  /* 36px - 48px */
+  --font-h2: clamp(1.75rem, 4vw, 2.25rem);
+  /* 28px - 36px */
+  --font-h3: clamp(1.25rem, 3vw, 1.75rem);
+  /* 20px - 28px */
+  --font-h4: clamp(1.1rem, 2vw, 1.25rem);
+  /* 17.6px - 20px */
+
+  --font-body-md: 1rem;
+  /* 16px (Medium text) */
+  --font-body-sm: 0.875rem;
+  /* 14px (Small text) */
+
+  /* Fonts */
+  --font-family: 'Plus Jakarta Sans', sans-serif;
+  --line-height-heading: 1.2;
+  --line-height-body: 1.6;
+
+  --header-height: 80px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-main: hsl(220, 13%, 91%);
+    --text-muted: hsl(220, 9%, 70%);
+    --bg-primary: hsl(222, 23%, 8%);
+    /* Main page background (Dark theme) */
+    --bg-secondary: hsl(222, 20%, 12%);
+    /* Cards, Header, Sections (Dark theme) */
+    --bg-tertiary: hsl(222, 15%, 16%);
+  }
+}
+
+html {
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: var(--line-height-body);
+  color: var(--text-main);
+  background-color: var(--bg-primary);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--text-main);
+  line-height: var(--line-height-heading);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: var(--font-h1);
+}
+
+h2 {
+  font-size: var(--font-h2);
+}
+
+h3 {
+  font-size: var(--font-h3);
+}
+
+h4 {
+  font-size: var(--font-h4);
+}
+
+p {
+  font-size: var(--font-body-md);
+  color: var(--text-muted);
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
