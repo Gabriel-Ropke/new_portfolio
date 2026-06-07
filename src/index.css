@@ -32,6 +32,30 @@
   /* Subtle containers, highlights, tag backgrounds */
   --border-color: hsl(220, 13%, 91%);
 
+  /* Gray Scale (Dark Theme Foundations) */
+  --gray-900: #101319;
+  --gray-800: #121318;
+  --gray-700: #181c25;
+  --gray-600: #1e2028;
+  --gray-500: #23232f;
+
+  /* Shadows */
+  --shadow-dark: rgba(0, 0, 0, 0.6);
+  --shadow-medium: rgba(0, 0, 0, 0.3);
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  
+  /* Syntax Highlighting */
+  --syntax-keyword: #c678dd;
+  --syntax-variable: #e5c07b;
+  --syntax-property: #61afef;
+  --syntax-string: #98c379;
+  --syntax-number: #d19a66;
+
+  /* Code Window UI */
+  --window-dot-red: #ff5f56;
+  --window-dot-yellow: #ffbd2e;
+  --window-dot-green: #27c93f;
+
   /* Gradients (Orange-based) */
   --gradient-primary: linear-gradient(135deg, var(--orange-soft) 0%, var(--orange-medium) 100%);
   --gradient-vibrant: linear-gradient(135deg, var(--orange-medium) 0%, var(--orange-dark) 100%);

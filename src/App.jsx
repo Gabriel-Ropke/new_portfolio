@@ -3,6 +3,8 @@ import Hero from './components/hero/Hero.jsx'
 import Stack from './components/stack/Stack.jsx'
 import Projects from './components/projects/Projects.jsx'
 import Footer from './components/footer/Footer.jsx'
+import Contact from './components/contact/Contact.jsx'
+
 function App() {
 
   return (
@@ -11,6 +13,7 @@ function App() {
       <Hero />
       <Stack />
       <Projects />
+      <Contact />
       <Footer />
     </>
   )

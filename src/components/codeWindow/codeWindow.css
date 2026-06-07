@@ -1,0 +1,120 @@
+div.code-window {
+    position: relative;
+    width: 100%;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color-dark, rgba(0,0,0,0.2));
+    border-radius: 10px;
+    box-shadow: 0 10px 30px var(--shadow-light);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 14px;
+    transition: 0.3s ease;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        /* Preenche o tamanho exato do card */
+        border-radius: inherit;
+        /* Mantém o mesmo arredondamento */
+
+        /* Usa uma cor um pouco mais escura que a frente do card para dar a ilusão de sombra/lateral */
+        background-color: var(--gray-800);
+
+        /* Empurra essa camada para trás. Aumente o valor para deixar o card mais "grosso" */
+        transform: translateZ(-12px);
+
+        /* Sombra extra no fundo para desgrudar do background da página */
+        box-shadow: 0 10px 20px var(--shadow-dark);
+        z-index: -10;
+    }
+
+    div.window-header {
+        background-color: var(--bg-tertiary);
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        border-bottom: 1px solid var(--border-color);
+        border-radius: 8px 8px 0 0;
+        position: relative;
+
+        span.dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+
+
+            &.red {
+                background-color: var(--window-dot-red);
+            }
+
+            &.yellow {
+                background-color: var(--window-dot-yellow);
+            }
+
+            &.green {
+                background-color: var(--window-dot-green);
+            }
+        }
+
+        button.run-btn {
+            position: absolute;
+            right: 15px;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-family: inherit;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.2s ease;
+
+            &:hover {
+                color: var(--orange-medium);
+                border-color: var(--orange-medium);
+                background: rgba(255, 117, 26, 0.1);
+            }
+        }
+
+    }
+
+    pre {
+        padding: 20px;
+        margin: 0;
+        overflow-x: auto;
+        color: var(--text-muted);
+        line-height: 1.5;
+        background: var(--gray-700);
+        border-radius: 0 0 8px 8px;
+
+        /* Purple */
+        .keyword {
+            color: var(--syntax-keyword);
+        }
+
+        /* Yellow */
+        .variable {
+            color: var(--syntax-variable);
+        }
+
+        /* Blue */
+        .property {
+            color: var(--syntax-property);
+        }
+
+        /* Green */
+        .string {
+            color: var(--syntax-string);
+        }
+
+        /* Orange */
+        .number {
+            color: var(--syntax-number);
+        }
+
+    }
+}

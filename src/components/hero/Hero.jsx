@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CodeWindow from "../codeWindow/CodeWindow";
 import "./hero.css"
 import profile from "../../assets/profile.jpeg"
 import { FaGithub, FaWhatsapp, FaLinkedin, FaArrowDown } from "react-icons/fa"
@@ -9,7 +10,6 @@ export default function Hero() {
 
     const handleRun = () => {
         setOutput(true)
-        console.log(output)
     };
 
     return (
@@ -42,38 +42,23 @@ export default function Hero() {
                         </div>
                         : ""}
                 </div>
-                <div className={output ? "code-window active" : "code-window"}>
-                    <div className="window-header">
-                        <span className="dot red"></span>
-                        <span className="dot yellow"></span>
-                        <span className="dot green"></span>
-                        <button className="run-btn" onClick={handleRun}>
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                            </svg>
-                            Run
-                        </button>
-                    </div>
-                    <pre>
-                        <code>
-                            <span className="keyword">const</span> <span className="variable">dev</span> = {"{"}
-                            <br />
-                            &nbsp;&nbsp;<span className="property">name</span>: <span className="string">"Gabriel Röpke"</span>,
-                            <br />
-                            &nbsp;&nbsp;<span className="property">age</span>: <span className="number">21</span>,
-                            <br />
-                            &nbsp;&nbsp;<span className="property">role</span>: <span className="string">"FullStack Developer"</span>,
-                            <br />
-                            &nbsp;&nbsp;<span className="property">location</span>: <span className="string">"Brasil"</span>,
-                            <br />
-                            &nbsp;&nbsp;<span className="property">skills</span>: [<span className="string">"React"</span>, <span className="string">"Node"</span>, <span className="string">"TS"</span>],
-                            <br />
-                            &nbsp;&nbsp;<span className="property">hireable</span>: <span className="keyword">true</span>,
-                            <br />
-                            {"}"}
-                        </code>
-                    </pre>
-                </div>
+                <CodeWindow isActive={output} onRun={handleRun}>
+                    <span className="keyword">const</span> <span className="variable">dev</span> = {"{"}
+                    <br />
+                    &nbsp;&nbsp;<span className="property">name</span>: <span className="string">"Gabriel Röpke"</span>,
+                    <br />
+                    &nbsp;&nbsp;<span className="property">age</span>: <span className="number">21</span>,
+                    <br />
+                    &nbsp;&nbsp;<span className="property">role</span>: <span className="string">"FullStack Developer"</span>,
+                    <br />
+                    &nbsp;&nbsp;<span className="property">location</span>: <span className="string">"Brasil"</span>,
+                    <br />
+                    &nbsp;&nbsp;<span className="property">skills</span>: [<span className="string">"React"</span>, <span className="string">"Node"</span>, <span className="string">"TS"</span>],
+                    <br />
+                    &nbsp;&nbsp;<span className="property">hireable</span>: <span className="keyword">true</span>,
+                    <br />
+                    {"}"}
+                </CodeWindow>
             </div>
             <div className="reflex">
             </div>
