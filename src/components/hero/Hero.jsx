@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CodeWindow from "../codeWindow/CodeWindow";
 import "./hero.css"
-import profile from "../../assets/profile.jpeg"
+import profile from "../../assets/pfp.jpeg"
 import { FaGithub, FaWhatsapp, FaLinkedin, FaArrowDown } from "react-icons/fa"
 import ParticlesBackground from "./ParticlesBackground";
 
@@ -20,16 +20,16 @@ export default function Hero() {
                 <h2>FullStack <br /> <span>Developer</span></h2>
                 <p>Sou um desenvolvedor fullstack focado em criar soluções digitais de alta performance e arquitetura sólida. Especializado em React, TypeScript e Node.js, transformo problemas complexos em aplicações web modernas, intuitivas e prontas para escalar.</p>
                 <div className="hero-links">
-                    <button>Ver Projetos <FaArrowDown /></button>
+                    <button><a href="#projects">Ver Projetos <FaArrowDown /></a></button>
                     <ul className="alt-links">
                         <li>
-                            <a href="#github"><FaGithub size={32} /></a>
+                            <a href="https://github.com/Gabriel-Ropke"><FaGithub size={32} /></a>
                         </li>
                         <li>
-                            <a href="#github"><FaLinkedin size={32} /></a>
+                            <a href="https://www.linkedin.com/in/gabriel-ropke-7338a9264/"><FaLinkedin size={32} /></a>
                         </li>
                         <li>
-                            <a href="#github"><FaWhatsapp size={32} /></a>
+                            <a href="https://wa.me/5548998159403"><FaWhatsapp size={32} /></a>
                         </li>
                     </ul>
                 </div>
